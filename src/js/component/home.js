@@ -6,7 +6,7 @@ export class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			player: "X",
+			player: null,
 			winner: null
 		};
 	}
@@ -20,11 +20,7 @@ export class Home extends React.Component {
 		return (
 			<div className="text-center mt-5">
 				<h1>
-					<strong>
-						Sams maybe Cool <br />
-						but probably wont work <br />
-						Tic Tac Toe board in React.js
-					</strong>
+					<strong>Tic Tac Toe board in React.js</strong>
 				</h1>
 				<div>The Winner is {this.state.winner}</div>
 				<GameBoard
