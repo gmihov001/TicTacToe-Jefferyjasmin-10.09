@@ -1,13 +1,21 @@
 @import "~bootstrap/scss/bootstrap.scss";
+.container{
+    width: 450px;
+     
+}
+.box {
+      height: 150px;
+    border: 1px solid black;
+}
 
-/* 
+body{
+    background: gray;
+}
 
-    You can write your own styles here...
+#player{
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+    margin-bottom: 8px;
+}

@@ -1,24 +1,38 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
+import { GameBoard } from "./gameBoard";
 //create your first component
-export function Home() {
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+
+export class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			player: "X",
+			winner: null
+		};
+	}
+	onWinner = winner => {
+		this.setState({ winner: winner });
+	};
+	switchPlayer = () => {
+		this.setState({ player: this.state.player == "X" ? "O" : "X" });
+	};
+	render() {
+		return (
+			<div className="text-center mt-5">
+				<h1>
+					<strong>
+						Sams maybe Cool <br />
+						but probably wont work <br />
+						Tic Tac Toe board in React.js
+					</strong>
+				</h1>
+				<div>The Winner is {this.state.winner}</div>
+				<GameBoard
+					switchPlayer={this.switchPlayer}
+					player={this.state.player}
+					onWinner={this.onWinner}
+				/>
+			</div>
+		);
+	}
 }
