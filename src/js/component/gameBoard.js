@@ -11,7 +11,7 @@ export class GameBoard extends Component {
 
 	checkWinningCombo = (winningPattern, currentPattern) => {
 		var successfullMatches = 0;
-		for (var i = 0; i < winningPattern.lenth; i++) {
+		for (var i = 0; i < winningPattern.length; i++) {
 			if (winningPattern[i] == 1) {
 				if (currentPattern[i] == this.props.player) {
 					successfullMatches++;
